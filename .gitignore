@@ -1,0 +1,6 @@
+# confidential
+conf/*.pem
+conf/config.xml
+
+#uploader script
+uploader.sh

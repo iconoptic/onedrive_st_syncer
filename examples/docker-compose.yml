@@ -1,0 +1,20 @@
+version: "3"
+services:
+    od_st:
+      image: od_st
+      container_name: od_st
+      environment:
+        - PUID=1000
+        - PGID=1000
+      volumes:
+        - ./od_st/onedrive:/od_st/onedrive
+        - ./od_st/sim_tech_docs:/od_st/sim_tech_docs
+        - ./od_st/config:/od_st/.config
+      ports:
+        - 28384:8384 # Syncthing Web UI
+      restart: unless-stopped
+
+networks:
+  default:
+    external:
+      name: "od_st_default"
